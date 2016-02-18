@@ -13,4 +13,21 @@
     tools:showIn="@layout/activity_top_level">
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/logo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/starbuzz_logo"
+        android:contentDescription="@string/starbuzz_logo"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/options"/>
 </RelativeLayout>
