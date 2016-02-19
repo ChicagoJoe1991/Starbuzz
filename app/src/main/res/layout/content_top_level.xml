@@ -29,5 +29,6 @@
         android:id="@+id/listView"
         android:layout_below="@+id/logo"
         android:layout_centerHorizontal="true"
-        android:entries="@array/options"/>
+        android:entries="@array/options"
+        />
 </RelativeLayout>
