@@ -1,5 +1,6 @@
 package com.example.walter.starbuzz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,13 +17,22 @@ public class DrinkCategoryActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drink_category);
+        ListView listDrinks = getListView();
 
         ArrayAdapter<Drink> listAdapter = new ArrayAdapter<Drink>(
                 this,
                 android.R.layout.simple_list_item_1,
                 Drink.drinks);
-        ListView listDrinks = getListView();
+
         listDrinks.setAdapter(listAdapter);
 
+    }
+    public void onListItemClick(ListView listView,
+                                View itemView,
+                                int position,
+                                long id){
+        Intent intent = new Intent(DrinkCategoryActivity.this, DrinkActivity.class);
+        intent.putExtra(DrinkActivity.EXTRA_DRINKNO, (int) id);
+        startActivity(intent);
     }
 }
