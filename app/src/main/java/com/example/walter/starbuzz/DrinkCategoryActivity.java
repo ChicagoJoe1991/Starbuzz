@@ -15,15 +15,20 @@ public class DrinkCategoryActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //make sure to delete the setContentView code for Activities using ListActivity layouts
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drink_category);
-        ListView listDrinks = getListView();
 
+        //create a separate class called Drink to put the array in
         ArrayAdapter<Drink> listAdapter = new ArrayAdapter<Drink>(
+                //this is the current activity
                 this,
+                //This is a built-in layout resource. it tells the array adapter to display each
+                //item in the array in a single text view
                 android.R.layout.simple_list_item_1,
+                //the array
                 Drink.drinks);
-
+        //attach the array adapter to the list view using the ListView setAdapter method()
+        ListView listDrinks = getListView();
         listDrinks.setAdapter(listAdapter);
 
     }
